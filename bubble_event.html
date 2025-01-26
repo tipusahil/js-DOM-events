@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubbling event</title>
+
+
+</head>
+<body id="#body">
+
+
+
+    <h1>DOM bubble event in js</h1>
+    
+    <section id="section1">
+
+        <!-- ol>li*4#item_$>lorem2 -->
+<ol id="order_list">
+
+    <li id="item_1">list er item 1</li>
+    <li id="item_2">list er item 2</li>
+    <li id="item_3">list er item 3</li>
+    <li id="item_4">list er item 4</li>
+
+</ol>
+
+    </section>
+
+
+<script>
+  let  item2 = document.querySelector('#item_2').addEventListener('click' , function (event) {
+        // console.log(item_2);//html tag er sob kisu console e dekte  caile
+console.log('you clicked list item 2');
+event.stopPropagation();//eta dewai ei event e click korle ei tag er event tai kaj korbe ,bairer gulo bubbling hobena. 
+
+event.stopImmediatePropagation();//ei line tar karone ei item 2 er jonno joto multiple event ase eta chara (ei event  chara jeheto ei event e .stop immedate prpragation  dewa hoise tai eta chara) bakisob event off hoye jabe. ortat propagation korbena. 
+
+    })
+ document.querySelector('#item_2').addEventListener('click' , function (event) {
+console.log('you clicked list item 2 1st event');
+    })
+
+    // list item 2 er third event
+ document.querySelector('#item_2').addEventListener('click' , function (event) {
+console.log('you clicked list item 2 second event');
+
+    })
+    // list item 3 er third event
+ document.querySelector('#item_2').addEventListener('click' , function (event) {
+console.log('you clicked list item 2 third event');
+
+    })
+
+    // ol tag er event: 
+    document.querySelector('#order_list').addEventListener('click' , function () {
+        console.log('you clicked order list or list items parent tag');
+    })
+
+    document.querySelector('#section1').addEventListener('click' , function () {
+        console.log('you clicked section tag , & its happened by propagation.');
+    }) 
+
+const body1 = document.getElementsByTagName("body")[0];
+body1.addEventListener('click' , function () {
+    console.log('you clicked body tag, by propagation')
+})
+</script>
+
+
+
+<pre>
+1. html er kuno tag/element console e attribute,text & tag name soho sob output e dekte caile: 
+kuno tag e output e dekte caile tkn: console.log(idname) otoba(classname); evabe dile hobe (#) ba (.) dot dite hobena. thlei oi tag ta output e dekabe.with value,attribute  sob
+2.event peramtiar: 
+shudo event peramtiar k console.log(event) dile event er modde ja ja ase sob console e dekabe. tobe function e peramitar hisebe (event) keyword ta use korte hobe.
+3.bubbling hocce jodi ami body tag,section tag,ol tag, li tag e sob gulo event add kori taile kuno user jodi li te click kore tar mane sei mainly li e click korlo ,erpor tar uporer ol tag e click hoye jabe ,section e click hoy jabe body tew click hoye jabe, karon li tag ta ase ol tag er modde li click korlei ol tag ta click hoy jabe, jodi li e click na kore ol e click kore tarmanre section tag e body tag e click hoye jabe. ortat kuno child tag e clic korlei tar parent joto tag ase sob gulo clic khobe jodi sob gulo te click event thake, 
+4. ei event gulo k bubbling bole pani theke jmn ek ek kore bot/bubble upore ute same way te hoi tai
+5. ar eshob event jodi off korte cai ortat jodi  li tag jeta te click korbo shudo setai click  dekabe, & uporer ol kinba section kinba etc uporer tag e jodi er propagation na chai tkn seta jevabe offk orte hobe.
+1.oi li tag er event er function e peramitar hiseve event dite hobe  & obdy er vitore ( event.stopPropagation(); ) eta use korlei ar bubbling hobena. abr chaile jodi li tag e eki sate onk gulo event add kora jabe ,segula jodi off korte cai tkn ( event.imedia  )
+
+</pre>
+
+
+
+
+
+<style>
+   body{
+    border: 5px solid green;
+   }
+    #section1{
+        border:2px solid greenyellow;
+    }
+
+    #order_list{
+        border:2px solid red;
+        margin: 10px;
+    };
+
+    #item_2{
+        border:2px solid purple;
+    }
+    ol li{
+        border:1px solid navy;
+        margin: 10px;
+    }
+
+
+</style>
+
+</body>
+</html>

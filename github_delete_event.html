@@ -33,8 +33,10 @@ let input_value_take_event_target = event.target.value ;//event peramitar theke 
 let delete_btn = document.querySelector('#delete_btn');
 delete_btn.removeAttribute('disabled');
     }
-    else{
-        delete_btn.setAttribute('disabled' , true);
+    else if(input_value_take_event_target !=='delete'){
+        let delete_btn = document.querySelector('#delete_btn');
+        delete_btn.setAttribute('disabled',true);
+
     }
     
     // else {
