@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        github repo delete
+    </title>
+</head>
+<body>
+
+
+    <h1>github er resository delete korar smy jei event ta hoi</h1>
+
+
+
+
+
+
+    <p id="secret_info">default text</p>
+    <input type="text" id="delete_system_event" placeholder='type "delete"'>
+
+    <button id="delete_btn" disabled>delete</button>
+<script>
+
+    // p tag er default text ta hide korte caile niser niome korte hobe.
+let  input_text_delete =  document.getElementById('delete_system_event').addEventListener('keyup', function (event) {
+    
+let input_value_take_event_target = event.target.value ;//event peramitar theke target er maddome value niye asa jabe evabei
+
+// let input_value = input_text_delete.value ;//direct tag theke niye asa jabe evabe.
+    if(input_value_take_event_target ==='delete'){
+let delete_btn = document.querySelector('#delete_btn');
+delete_btn.removeAttribute('disabled');
+    }
+    else{
+        delete_btn.setAttribute('disabled' , true);
+    }
+    
+    // else {
+    //     delete_btn.setAttribute('disabled',true);
+    // }
+    console.log(delete_btn);
+});
+
+let delete_btn = document.querySelector('#delete_btn').addEventListener('click' , function () {
+    let secret = document.getElementById('secret_info');
+    secret.style.display = 'none';
+})
+console.log(delete_btn);
+
+
+</script>
+    
+</body>
+</html>

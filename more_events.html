@@ -25,15 +25,60 @@
 <!-- input field er ketre jesob events gulo drkr hoi. -->
 <input type="text" id="input_field">
 <script>
-    document.getElementById('input_field').addEventListener('mousemove' , function(){
+ 
+    // mouseenter event 1.
+    document.getElementById('input_field').addEventListener('mouseenter' , function(){
         console.log("input_field triggred");
         event.stopPropagation()
     });
 
+    // mousemove event 2.
+    document.getElementById('input_field').addEventListener('mousemove' , function(){
+        console.log("input_field triggred");
+        event.stopPropagation()
+    });
+    
+</script>
+
+<!-- focus event 3 -->
+<input type="text" id="input_focus">
+<script>
+    const focus1 = document.getElementById('input_focus').addEventListener('focus' , function () {
+console.log("fucos on");
+    });
+    // blur event 4
+    const blur1 = document.getElementById('input_focus').addEventListener('blur' , function () {
+console.log("fucos off blur on");
+    });
 </script>
 
 
+<!-- key events  -->
+key event gulo tokoni valo vabe kaj korbe jokon key event gulo kuno input field e dewa hobe, onnotai kaj korbena, karon keyup/keydown er maddome user ki click kortece seta newa hoi.
 
 
+<!-- <button id="key_event1">keydown event btn 1</button> -->
+<input type="text" id="key_event1" placeholder="keydown event btn 1">
+
+
+<!-- <button id="key_event2">keyup event btn 2</button> -->
+<input type="text" id="key_event2" placeholder="keyup event btn 2">
+<script>
+    // keydown event 1, button jkn niser dike click/press hoi tkni eta hobe.
+    document.querySelector('#key_event1').addEventListener("keydown" , function (event) {
+
+        console.log('keydown event hoyece 1.');
+
+        // jodi input er value ta pete cai tkn function e (event) name peramitar ta dite hobe ,& event er madde jeheto onk kisu thake sekan theke target ta niye .value dilei input e user jei value/text dibe seta pai jabo.
+
+console.log(event.target.value);
+
+    });
+    // keyup event 2, button jkn click hoye uporer dike utbe clickup hobe tkni keyup event ta hobe.
+    document.querySelector('#key_event2').addEventListener('keyup' , function (event) {
+        console.log('keyup event hoise 2');
+        console.log(event.target.value);
+    })
+</script>
 </body>
 </html>
