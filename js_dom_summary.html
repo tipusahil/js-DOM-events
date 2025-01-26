@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js DOM events Summary</title>
+</head>
+
+<body>
+    <h1>final DOM event handlers</h1>
+
+    <h3 id="default_text1"> default-status</h3>
+    <button onclick="handleOnClick()">handle event by add on click</button>
+    <button id="event-listener">handle by event listener</button>
+
+    <script>
+
+        function handleOnClick() {
+            let default_text = document.getElementById('default_text1');
+            default_text.innerText = 'handled by function  attached  on onclick attribute btn';
+            document.body.style.backgroundColor = 'green';
+        }
+
+        // option 2: event-listener er maddome handle kora
+        let byEventListener = document.querySelector('#event-listener').addEventListener('click', function () {
+            let handlerStatus = document.querySelector('#default_text1');
+            handlerStatus.innerText = 'text updateded by addeventListener button click';
+
+            document.body.style.backgroundColor = ' pink ';
+
+
+        });
+
+    </script>
+
+
+    <br>
+    <br>
+    <br>
+    <!-- option 2: input e kivabe event listener add kora jai tar. -->
+    <!-- input field e add eventlistener add korar system:  -->
+    <p id="p_input_text_display"> default input text</p>
+    <!-- <input id="input_field" type="text"> -->
+    <input id="input_field" type="password">
+    <button id="update_btn"> update</button>
+
+
+    <script>
+        let update_btn = document.querySelector('#update_btn').addEventListener('click', function () {
+
+            let input_field1 = document.querySelector('#input_field'); //varialbe no 1
+
+            let input_field_text = input_field1.value;//variable no: 2
+
+            let p_input_text_display = document.querySelector('#p_input_text_display');
+            // input_text_display >  variale no: 3
+            p_input_text_display.innerText = input_field_text;
+            console.log(input_field_text);
+        
+            input_field1.value = '';
+            // input tag er value p tag e jawar por porei jate input field kali hoye jai tar jonno oi input_tag.value = ''; evabe mt string dite hoise.
+            
+
+/* explain of update_btn event: 
+1.update btn click korlei add event listener e click event kaj korbe. 7 jei annonimous function er vitore ja ja operation ase ta kaj korbe.
+  2.update btn click korlei input field ta select hoye jabe, id er maddome then
+  3. input field e user jei value/text input dibe seta variable no 2 e store hoye thakbe.
+  4. & erpore 3no variable er maddome p tag ta select kora hoise & 3no varaible e  name dhore p tag er innertext  = variable  2 e store kore raka input field er value dewa hoise , jate  input field er value/text ta  p tag e display/show kore. 
+
+  ##final sob kisu event gulo  tokoni hobe jokon update button e click kora hobe.
+*/
+
+        });
+
+    </script>
+
+</body>
+
+</html>

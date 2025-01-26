@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        practice DOM event listener
+    </title>
+</head>
+<body>
+
+    <pre>
+step-1: sob kisu event jeheto oi push btn click korlei ghotbe  tai age oi btn ta js e select krote hobe.
+step-2: select kore (dot.addEventListener) er maddome click event add kore ekta name function otoba annonimous function likha tar vitore jabotio kaj/event ghotate hobe ortat click event to add korlm ,kintu click event hole kon kon kaj ta hobe seta oi function er vitorei thakbe.
+step-3:then textarea tag ta select korte hobe & text box er value(user ja input dibe)segulo jate ekta variable e store kore rake tar jonno ekta variale e rakte hobe. input/textarea er ketre (textarea.value) diye vitorer text/value gulo nite hoi,kintu emne normal tag er ketre innerHTML/innerText diye oi tag er content/text gulo newa hoi
+step-4:
+step-5:
+step-6:
+
+
+<!-- step-1 p tag er jonno ekta container create korlm output p tag e dekbo p tag er text hisebe. -->
+<div id="p_tag_container">
+    <p id="p_tag">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ullam, sequi natus fuga minus a sapiente placeat officia soluta repellendus?</p>
+
+</div>
+
+<div id="button_container">
+    <textarea name="text" id="text_input_box" cols="30" placeholder="write here"></textarea>
+
+    <!-- btn for textbox e input pawa text gulo p_container er p tag output hisebe pawar jonno -->
+    <button id="push_btn">text push</button>
+
+    <script>
+        let push_btn = document.querySelector('#push_btn').addEventListener('click' , function () {
+
+
+            // step-2: get the comment inside textarea comment box's
+            const text_input_box = document.querySelector('#text_input_box');
+            text_input_box_value = text_input_box.value;
+
+            // step-3: select the p_tags_container & create new p tag that
+            // 1.get the container
+            // 2.create a new p tag 
+            // 3.set the comment/text of textarea in p tag's text
+            // 4.add the p tag by using appendChild of  p_tag_container
+            let p_tags_container = document.querySelector('#p_tag_container');// step-3: 1
+            let new_pTag = document.createElement('p');// step-3: 2
+            new_pTag.innerText = text_input_box_value;// step-3: 3
+            
+            p_tags_container.appendChild(new_pTag);// step-3: 4
+
+            // step-4: clear the textarea's value after values push to p  tag
+            text_input_box.value = ''; // step-4 //text p tag e jawar pore jate remove hoye jai.
+
+
+        });
+    </script>
+</div>
+
+    </pre>
+    
+</body>
+</html>

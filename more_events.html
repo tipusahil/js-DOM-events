@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        more events
+    </title>
+</head>
+<body>
+
+    <h1>explore More Events in js</h1>
+    
+    <button id="button_1">button 1</button>
+    <script>
+        // const btn_1 =
+       document.getElementById('button_1').addEventListener('mousemove', function(){
+            // btn_1.inner = 'you clicked button_1';
+            console.log('button 1 triggred');
+            
+        })
+    </script>
+
+
+<!-- input field er ketre jesob events gulo drkr hoi. -->
+<input type="text" id="input_field">
+<script>
+    document.getElementById('input_field').addEventListener('mousemove' , function(){
+        console.log("input_field triggred");
+        event.stopPropagation()
+    });
+
+</script>
+
+
+
+
+</body>
+</html>

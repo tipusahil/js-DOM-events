@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events program 3</title>
+    <!-- tailwind linkup -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+</head>
+
+<body>
+
+    <div style="border:2px solid red;">
+        <h1>eventlistener add in a comment box</h1>
+  
+    1.kuno input theke tar text/value nite caile .value use korte hobe,
+    2. ar kuno tag jmn p,h1,h3 etc tag theke tar vitorer text nite caibo tkn innerHTML/innerText use korte hobe.  
+    3. input er ketre (.value) use korar karon hocce input er text k value hisebe dhora hoi,seta hok textarea/input tag theke.
+      
+<div>
+
+    <p id="text_box_output_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium sit dolorum
+        voluptate aut modi perspiciatis aliquid fugit, non tenetur vero.</p>
+
+
+    <textarea name="text" id="text_box" rows="5" cols="30"
+    placeholder=" write here & text push to p tag"></textarea> <br>
+<button id="push_btn">click me & textbox text push to p tag</button>
+  
+<script>
+
+    let push_btn1 = document.querySelector('#push_btn').addEventListener('click', function () {
+
+        let text_box1 = document.querySelector('#text_box');
+        text_box1_texts = text_box.value;
+
+
+        let text_box_output_p_1 = document.querySelector('#text_box_output_p');
+        text_box_output_p_1.innerText = text_box1_texts;
+        text_box1.value ='';
+
+        
+
+        // value newa  hoye jate textbox theke text/value ta mose jai tar jonno mt string declare korte hbe.
+    
+
+    })
+</script>
+</div>
+  
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript DOM Events</title>
+</head>
+<body>
+<!-- 25-2 Add onclick handler directly or via javascript -->
+
+
+    <!--btn e onclick event handler add korar option 1 -->
+<button  onclick="console.log('you clicked btn 1')">button 1</button>
+<button onclick="console.log('you clicked btn 2');document.body.style.backgroundColor='azure'">button 2</button>
+
+<button onclick="document.body.style.backgroundColor='red'"> click me & make red</button>
+<!-- evabe inline way te javaScript diye property add/style kora jai,taw onclick event er maddome  -->
+
+
+    <!--btn e onclick event add korar option 2 -->
+<button onclick="giveAzureColor()"> click me & make colorful</button>
+
+    <!--btn e onclick event add korar option 3 -->
+<button id="blue_btn">make blue</button>
+
+    <!--btn e onclick event add korar option 4 -->
+<button id="purple_btn">make purple</button>
+
+<!-- btn 5 e click korle niser p tag e output dekanur system 1 -->
+<button id="button_5">button 5</button>
+<p id="output_p"> You haven't click any btn</p>
+
+
+<!-- for addEventListener btn 1 -->
+ <button id="add_eventLR"> BUTTON addEventListener</button>
+
+<!-- for addEventListener btn 2 -->
+ <button id="add_event_btn_2"> BUTTON  event2</button>
+
+<!--option 6:
+most most most popular ,etai beshi use kora hobe. -->
+<button id="popular_event_add">make grey, tai use kora hbe beshi</button>
+
+
+
+
+
+<!-- js file linkup -->
+<script src="js/onclick_event1.js">
+
+
+</script>
+
+    
+</body>
+</html>
