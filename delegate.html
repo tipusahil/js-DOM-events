@@ -15,31 +15,55 @@
         <li class="item">list item 3</li>
         <li class="item">list item 4</li>
 
-        <button id="push_btn">boom</button>
     </ol>
+    <button id="push_btn">boom</button>
 
     <script>
-        const items = document.getElementsByClassName('item');
-       console.log(items);// varaible e jeheto sob li ase , but jodi index number diye deifne kroe dito tkn li er oi index er li tai store thakto.
 
-        for(const item of items){
-            item.addEventListener('click' , function (event) {
-                // console.log(item);//1.jei item ta click kora hobe seta console korbe.
+//         const items = document.getElementsByClassName('item');
+//        console.log(items);// varaible e jeheto sob li ase , but jodi index number diye deifne kroe dito tkn li er oi index er li tai store thakto.
 
- console.log(event.target);//2.jei item ta click kora hobe seta console korbe.same ei kintu (event.target) mane bujai oi tag ta jeta k click kora hoise jetar upor event ta hocce.
+//         for(const item of items){
+//             item.addEventListener('click' , function (event) {
+//                 // console.log(item);//1.jei item ta click kora hobe seta console korbe.
+
+//  console.log(event.target);//2.jei item ta click kora hobe seta console korbe.same ei kintu (event.target) mane bujai oi tag ta jeta k click kora hoise jetar upor event ta hocce.
 
 
-                console.log(event.target.parentNode);//3. ortat jeta click kora hobe seta manei jeheto event.target bujai tai (.parentNode) dile sei clicked howa tag tar parent take bujai. ortat(parentNode mane holo (items_container_ol) eta);
+//                 console.log(event.target.parentNode);//3. ortat jeta click kora hobe seta manei jeheto event.target bujai tai (.parentNode) dile sei clicked howa tag tar parent take bujai. ortat(parentNode mane holo (items_container_ol) eta);
 
  
         
-               event.target.parentNode.removeChild(event.target);//4.etar mane holo jei child tag e click kora hobe setar parent tag k dakalam taw jake click korsi tar maddome then parent TAG  k deke bollm tmr removechild child remove koro, tkn () er vitore konta remove korte hove seta bole dite hobe, tkn jodi bracket er vitore (event.target) dei thle jar maddome parent tag k daka hoise sei child tag take remove korte hobe.
+//                event.target.parentNode.removeChild(event.target);//4.etar mane holo jei child tag e click kora hobe setar parent tag k dakalam taw jake click korsi tar maddome then parent TAG  k deke bollm tmr removechild child remove koro, tkn () er vitore konta remove korte hove seta bole dite hobe, tkn jodi bracket er vitore (event.target) dei thle jar maddome parent tag k daka hoise sei child tag take remove korte hobe.  
+//             })
+//         }
 
-        /* total kotha holo:  */
-                
-            })
-        }
+
+// delegate kore dewa hoise:  
+document.querySelector('#items_container_ol').addEventListener('click' , function (event) {
+     console.log(event.target);
+event.target.parentNode.removeChild(event.target);
+// eta age 
+})
+
+
+        // btn 
+       const btn = document.getElementById("push_btn");
+
+        btn.addEventListener('click' , function () { 
+
+           let item_conatainer = document.querySelector('#items_container_ol');
         
+           let new_tag = document.createElement('li');
+           new_tag.innerText = 'item new 11';
+            new_tag.classList.add('item');
+           console.log(new_tag);
+
+           item_conatainer.appendChild(new_tag);
+
+
+
+        });
 
     </script>
 
